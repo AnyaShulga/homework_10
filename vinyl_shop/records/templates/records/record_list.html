@@ -1,0 +1,21 @@
+{% extends 'records/base.html' %}
+
+{% block title %}
+  Record in stock
+{% endblock %}
+
+{% block body %}
+  <h1 class="my-3">Records in stock:</h1>
+    {% for record in object_list %}
+    <div class="container">
+      <div class="row">
+        <div class="col-3 fs-4">
+          <a href="{% url 'records:details' record.pk %}">{{ record.artist }}</a>
+        </div>
+        <div class="col-md-7 col-sm-3 fs-4">
+          <a href="{% url 'records:details' record.pk %}"><i>{{ record.album }}</i></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}

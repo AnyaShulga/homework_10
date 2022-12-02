@@ -1,0 +1,57 @@
+{% extends 'records/base.html' %}
+
+{% block title %}
+  {{ record.album }} details
+{% endblock %}
+
+{% block body %}
+  <h1 class="my-3">{{ record.artist }} <i>{{ record.album }}</i></h1>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-2 fs-5">
+          Year:
+        </div>
+        <div class="col-5 fs-5">
+          {{ record.year }}
+        </div>
+        <div class="row">
+        <div class="col-2 fs-5">
+          Condition:
+        </div>
+        <div class="col-5 fs-5">
+          {{ record.condition }}
+        </div>
+          <div class="row">
+        <div class="col-2 fs-5">
+          Record label:
+        </div>
+        <div class="col-5 fs-5">
+          {{ record.record_label }}
+        </div>
+        <div class="row">
+        <div class="col-2 fs-5">
+          Genres:
+        </div>
+        <div class="col-10 fs-5">
+          {% for genre in record.genre.all %}
+          <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">
+          {{ genre }}
+          </li>
+          </ul>
+          {% endfor %}
+        </div>
+  </div>
+
+  <div class="my-3">
+    <a
+      class="btn btn-danger"
+      href="{% url 'records:delete' record.pk %}">
+      Delete record
+    </a>
+  </div>
+  <div class="my-2">
+    <a href="{% url 'records:list' %}">Back to the list of records</a>
+  </div>
+{% endblock %}

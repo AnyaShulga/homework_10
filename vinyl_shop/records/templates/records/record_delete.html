@@ -1,0 +1,21 @@
+{% extends 'records/base.html' %}
+
+{% block title %}
+  Delete {{ record }}
+{% endblock %}
+
+{% block body %}
+  <h1>Delete record</h1>
+  <form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete record "{{ record.album }}" by {{ record.artist }}?</p>
+    {{ form }}
+    <button class="btn btn-danger" type="submit">
+      Delete
+    </button>
+    <div class="my-2">
+    <a href="{% url 'records:details' record.pk %}">
+      Back to the record
+    </a>
+    </div>
+  </form>
+{% endblock %}

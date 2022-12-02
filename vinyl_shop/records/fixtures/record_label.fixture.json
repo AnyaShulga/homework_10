@@ -1,0 +1,2 @@
+[{"model": "records.recordlabel",
+  "pk": 1, "fields": {"name": "Innovative Records"}}, {"model": "records.recordlabel", "pk": 2, "fields": {"name": "Fiction Records"}}, {"model": "records.recordlabel", "pk": 3, "fields": {"name": "Columbia"}}, {"model": "records.recordlabel", "pk": 4, "fields": {"name": "Kling Klang"}}]
